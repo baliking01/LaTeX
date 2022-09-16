@@ -1,0 +1,76 @@
+\documentclass[12pt, twoside, twocolumn]{article}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{hulipsum}
+
+\author{Nagy Balázs}
+\title{2. gyakorlat}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\geometry{margin=3cm, outer=5cm, bindingoffset=1cm,
+marginparwidth=3cm, marginparsep=0.5cm, columnsep=2cm}
+%\pagestyle{headings}
+\pagestyle{myheadings}
+\markboth{N. Balázs}{gyak2}
+
+\begin{document}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\maketitle
+
+\begin{abstract}
+\hulipsum[4]
+\footnote[5]{lábjegyzet}
+\end{abstract}
+\clearpage
+
+\pagenumbering{roman}
+\tableofcontents
+\pagenumbering{arabic}
+
+\clearpage
+
+\section[Prologue]{Bevezetés\footnote[4]{A bekezdés címe}}
+
+\subsection{Első szekció}
+\hulipsum[4]
+
+\subsection{Második szekció}
+\marginpar{\hulipsum[1]}
+\hulipsum[13]
+
+\section{Valami kellően hosszú cím}
+\subsection{Első szint}
+\subsubsection{Második szint}
+\paragraph{Harmadik szint}
+\subparagraph{Negyedik szint}
+
+\begin{quote}
+Ez egy nagyon bölcs idézet.
+\end{quote}
+
+\begin{quotation}
+A MÁV idén 69 millió forint veszteséget szenvedett
+\end{quotation}
+
+\begin{verse}
+\hulipsum[2-3]
+\end{verse}
+
+\appendix
+\section{Domestic problems}
+\subsection{A roma kisebbség életéról}
+\hulipsum[15]
+\subsection{Miért igénylik a CSOK-ot?}
+\hulipsum[12]
+
+\section{A megoldás}
+\subsection{A cigány telepek felszámolása}
+\hulipsum[8]
+\subsection{Konszolidációs lépések}
+\marginpar{\hulipsum[1]}
+\hulipsum[9]
+\end{document}

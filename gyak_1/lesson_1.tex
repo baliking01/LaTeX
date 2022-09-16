@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{hulipsum}
+\usepackage{blindtext}
+
+
+\linespread{1.3}
+\frenchspacing
+
+\begin{document}
+
+\texttt {Text in typewriter}\par
+\textbf {Text in bold}\par
+\textit {Italic text}\par
+\textsc {Small caps text}\par
+\textsl {Slanted text}\par
+\textsf {Sans Serif font style}
+
+\textbf{\emph{Emphasized bold text}}\par
+\textit{\emph{Emphasized italic text}}\par
+\textsc{\emph{Emphazised small capital text}}\par
+
+\framebox{\reflectbox {Mirrored text}}\par
+
+\scalebox{2}[-1]{Text mirrored on horizontal axis}\par
+\rotatebox{90}{Text rotated 90 degrees}\par
+\rotatebox{270}{Text rotated 270 degrees}\par
+\colorbox{black}{\textcolor{white}{white text on black background}}\par
+
+\fcolorbox{red}{white}{\textcolor{red}{Red text in red frame}}\par
+
+{\linespread{1.6}\selectfont\blindtext\par\bigskip}
+{\flushright\hulipsum\par\vspace{1 cm}}
+
+{\foreignlanguage{latin}{\scalebox{1}[-1]{\parbox{0.7\linewidth}{\lipsum}}}}\par
+
+{\selectlanguage{english}{\today}}\par
+\today
+
+\end{document}

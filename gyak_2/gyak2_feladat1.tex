@@ -1,0 +1,97 @@
+\documentclass[12pt, twoside]{article}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hulipsum}
+\usepackage[colorlinks,linkcolor=blue,%
+urlcolor=purple,citecolor=red]{hyperref}
+
+\author{Nagy Balázs}
+\title{2. gyakorlat}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\footrulewidth}{0.4pt} 
+\geometry{margin=3cm, outer=5cm, bindingoffset=1cm,
+marginparwidth=3cm, marginparsep=0.5cm, headheight=2cm}
+
+\pagestyle{fancy}
+\fancyhead[LE, RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\fancyfoot[C]{Miskolci Egyetem}
+
+\begin{document}
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\pagestyle{plain}
+\maketitle
+\pagestyle{fancy}
+
+\begin{abstract}
+\hulipsum[4]
+\footnote[5]{lábjegyzet}
+\end{abstract}
+\clearpage
+
+\pagenumbering{roman}
+\tableofcontents
+\pagenumbering{arabic}
+
+\clearpage
+
+\section[Prologue]{Bevezetés\footnote[4]{A bekezdés címe}}
+\ref{számozatlan}\linebreak
+\ref{2nd section}\linebreak
+\pageref{Két szekció között}\linebreak
+\pageref{Appendix}\linebreak
+\href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{További információ az egyetem weboldalán!}\linebreak
+\autoref{Appendix}
+\subsection{Első szub-szekció}
+\hulipsum[4]
+
+\subsection{Második szub-szekció}
+\marginpar{\hulipsum[1]}
+\hulipsum[13]
+
+\label{Két szekció között}
+
+\section{Valami kellően hosszú cím}
+\subsection{Első szint}
+\subsubsection{Második szint}
+\paragraph{Harmadik szint}
+\label{2nd section}
+\subparagraph{Negyedik szint}
+
+\begin{quote}
+Ez egy nagyon bölcs idézet.
+\end{quote}
+
+\begin{quotation}
+A MÁV idén 69 millió forint veszteséget szenvedett
+\end{quotation}
+
+\begin{verse}
+\hulipsum[2-3]
+\end{verse}
+
+\section*{Számozatlan szekció}
+\markboth{}{}
+\label{számozatlan}
+\hulipsum
+
+\appendix
+\section{Domestic problems}
+\subsection{A roma kisebbség életéról}
+\hulipsum[15]
+\subsection{Miért igénylik a CSOK-ot?}
+\hulipsum[12]
+
+\section{A megoldás}
+\subsection{A cigány telepek felszámolása}
+\hulipsum[8]
+\subsection{Konszolidációs lépések}
+\marginpar{\hulipsum[1]}
+\label{Appendix}
+\hulipsum[9]
+\end{document}
