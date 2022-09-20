@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage{t1enc}
+\usepackage[english,magyar]{babel}
+\usepackage{hulipsum}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[inline]{enumitem}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+
+\newlist{enuma}{enumerate}{5}
+\setlist[enuma]{label=\arabic*)}
+
+\begin{document}
+
+\listoftables
+\listoffigures
+
+\begin{enumerate}
+	\item Image
+	\item \ref{fig:Images}
+	\item \ref{firstImage}
+	\item \ref{secondImage}
+	\item Second image
+\end{enumerate}
+
+\begin{itemize*}[itemjoin*={\hspace{1em}és}]
+	\item egy
+	\item kettő
+	\item három
+\end{itemize*}
+
+\ref{IrregularElement}
+
+\begin{enumerate}[label=(\arabic*)]
+	\item First level
+	
+	\begin{enumerate}[label*=(\arabic*)]
+		\item Second level
+		
+		\begin{enumerate}[label*=(\arabic*)]
+			\item Third level
+		
+			\begin{enumerate}[label*=(\arabic*)]
+				\item Fourth level		
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+\end{enumerate}	
+
+\hulipsum[2]
+
+\begin{enuma}[series=firstList]
+	\item Custom list
+	\begin{enuma}[series=secondList]
+		\item with
+		\begin{enuma}[series=thirdList]
+			\item a depth
+			\begin{enuma}[series=fourthList]
+				\item of
+				\begin{enuma}[series=fifthList]
+					\item five
+				\end{enuma}
+			\end{enuma}
+		\end{enuma}
+	\end{enuma}
+\end{enuma}
+
+\hulipsum[6]
+
+\begin{enuma}[resume=firstList]
+	\item Continuation
+	\begin{enuma}[resume=secondList]
+		\item of
+		\begin{enuma}[resume=thirdList]
+			\item the
+			\begin{enuma}[resume=fourthList]
+				\item previous
+				\begin{enuma}[resume=fifthList]
+					\item list
+					\item[\label{IrregularElement}]
+				\end{enuma}
+			\end{enuma}
+		\end{enuma}
+	\end{enuma}
+\end{enuma}
+
+\begin{description}[style=nextline]
+	\item[]\hulipsum[3]
+	\item[\textsl Another text segment]\hulipsum[1]
+	\item[\textsl Some random text that is suffciently long enough and complicated\linebreak And is multi-lined]\hulipsum[1]
+\end{description}
+
+\hulipsum[1]
+\begin{figure}[bt]
+	\centering
+	\label{Images}	
+	\begin{subfigure}[c]{5cm}
+		\label{firstImage}
+		\caption{Image}
+		\includegraphics[width=5cm, height=5cm, keepaspectratio]{win11}
+	\end{subfigure}
+	\begin{subfigure}[c]{5cm}
+		\label{secondImage}
+		\caption{Second image}
+		\scalebox{-1}{\includegraphics[width=5cm, height=5cm, keepaspectratio]{win11}}
+	\end{subfigure}
+	
+\end{figure}
+\hulipsum[1]
+
+\begin{tabular}{r|p{3cm}|ll|}
+	First column & Second column & Third column \\ \hline
+	Some text & these cells are small & greg \\
+	table contents & picture & XOR \\
+\end{tabular}
+
+\clearpage
+
+\begin{tabular}{p{3cm}|ll|}
+	\rowcolor{cyan}
+	Second column & Third column \\ \hline
+	\rowcolor{green}
+	these cells are small & greg \\
+	\rowcolor{cyan}
+	picture & XOR \\
+\end{tabular}
+
+\begin{wrapfloat}{table}{r}{5cm}
+	\begin{tabular}{p{3cm}|ll|}
+	\rowcolor{cyan}
+	Second column & Third column \\ \hline
+	\rowcolor{green}
+	\multicolumn{2}{|c|}{these cells are small greg}\\
+	\rowcolor{cyan}
+	picture & XOR \\
+	\end{tabular}
+\end{wrapfloat}
+
+
+
+\end{document}
