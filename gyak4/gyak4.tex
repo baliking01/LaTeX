@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{hulipsum}
+\usepackage{float}
+\usepackage{newfloat}
+\usepackage{caption}
+\usepackage{algpseudocode}
+
+\theoremstyle{plain}
+\newtheorem*{tet1}{Tétel}
+\newtheorem{tet2}{Tétel}
+\newtheorem{lemma}[tet2]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem*{defin1}{Definíció}
+\newtheorem{defin2}{Definíció}
+
+\theoremstyle{remark}
+\newtheorem*{megjegyzés}{Megjegyzés}
+\newtheorem{feladat}{Feladat}[section]
+
+\floatstyle{ruled}
+\newfloat{forraskod}{thp}{los}
+\floatname{forraskod}{Forraskod}
+
+\floatname{lstlisting}{Algoritmus}
+
+
+
+\begin{document}
+	\listof{forraskod}{Forráskódok listája}
+	\listof{lstlisting}{Algoritmusok}
+	\pagebreak
+	
+	\begin{defin1}
+	\hulipsum[1]
+	\end{defin1}
+	
+	\begin{tet1}[Pitagorasz]
+	\hulipsum[1]
+	\end{tet1}ű
+	
+	\begin{proof}
+	\hulipsum[1]
+	\end{proof}
+	
+\pagebreak	
+	
+	\begin{lemma}
+	\hulipsum[1]
+	\end{lemma}
+	
+	\begin{defin2}
+	\hulipsum[1]
+	\end{defin2}
+	
+	\begin{tet2}[Riemann-integrál]
+	\hulipsum[3]
+	\end{tet2}
+	
+\pagebreak
+
+	\section{Section}
+		\begin{feladat}
+		\hulipsum[1]
+		\end{feladat}
+		
+		\begin{feladat}
+		\hulipsum[1]
+		\end{feladat}
+		
+		\begin{feladat}
+		\hulipsum[1]
+		\end{feladat}
+	
+	\section{Theorems}
+		\begin{tet2}[Some famous theorem]
+		\hulipsum[1]
+		\end{tet2}
+		
+		\begin{proof}
+		\hulipsum[1]
+		\end{proof}
+		
+		\begin{megjegyzés}
+		\hulipsum[1]
+		\end{megjegyzés}
+		
+Nem végrehajtott parancs \verb|\LaTeX|\par
+\verb|\section{•}|
+
+\begin{forraskod}\caption {Tétel generálása}
+	\begin{verbatim}
+	 \begin{tet1}[Újabb tétel]
+	 \hulipsum[0]
+	 \end{tet1}\end{verbatim}
+\end{forraskod}
+
+\hulipsum
+
+\begin{forraskod}\caption{Lista}
+	\begin{verbatim}
+	\begin{itemize}
+    	\item One
+    	\item Two
+    	\item Three
+	\end{itemize}
+	\end{verbatim}
+\end{forraskod}
+
+
+\begin{lstlisting}[language=c, numbers=left, tabsize=5, frame=single, caption={Fast Inverse Square Root (Quake III Algorithm)}]
+  float Q_rsqrt( float number ){
+  	long i;
+  	float x2, y;
+  	const float threehalfs = 1.5F;
+
+  	x2 = number * 0.5F;
+  	y  = number;
+  	i  = * ( long * ) &y;
+  	i  = 0x5f3759df - ( i >> 1 );
+  	y  = * ( float * ) &i;
+  	y  = y * ( threehalfs - ( x2 * y * y ) );
+  	
+  	return y;
+  
+}
+\end{lstlisting}
+\pagebreak
+
+\begin{algorithmic}[1]
+	\Procedure{Quicksort}{@A, a, b}
+		\Require A írható tömb
+		\Require 1 $\leq$ a $\leq$ b $\leq$ Hossz|A| indexek
+		\Ensure a-b indextartományt rendezzük
+		\If{a = b}
+		\State \Return A
+		\Else
+		\State \Call{Feloszt}{@A, a, b, A(a), @q}
+		\State \Call{Quicksort}{@A, a, q}
+		\State \Call{Quicksort}{@A, q+1, b}
+		\State \Return A
+		\EndIf
+		
+	\EndProcedure
+\end{algorithmic}
+
+\end{document}
