@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{hulipsum}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{pgffor}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+
+\begin{document}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Defniáljuk az arg max operátort, és teszteljük a viselkedését kiemelt matematikai módban:
+	\[
+		\underset{x\in[0, 1]}{x^*:= \text{arg max } x \text{log}_2(x)}.
+	\]
+	
+	\item Defniáljuk és teszteljük a felső egészrész függvényt:
+	\[
+			\lceil x\rceil = \bigg\lceil \frac{5}{3} \bigg\rceil
+	\]
+	
+	\item Defniáljuk a várható értéket és feltételes várható értéket (mint egy- ill. kétargumentumos parancsokat automatikusan méretezett zárójellel) és gépeljük
+be velük a következő formulát!
+
+	\[
+		\mathbb{E} \Bigg[\sum_{i=1}^N X_i \Bigg] = \mathbb{E} \Bigg[ \mathbb{E} \Bigg[ \sum_{i=1}^N X_i \bigg\vert N \Bigg]\Bigg]
+	\]
+
+\end{enumerate}
+
+
+Második Feladat
+
+\newenvironment{keynote}[1]{\vspace{1ex}\hrule\vspace{1ex
+}\begin{center}\textbf{#1}\end{center}}{\vspace{1ex}\hrule\vspace{1ex}}
+
+\newcounter{keynotes}
+\newcounter{sub-keynotes}[section]
+
+\begin{keynote}{cím}
+	\hulipsum[2]
+	
+	\newcommand{\kgitem}{\noindent\stepcounter{keynotes}\fbox{\makebox[0.5cm]{\thekeynotes}}}
+	\kgitem
+	
+\end{keynote}
+
+Negyedik feladat
+
+\newcolumntype{A}{>{\ifthenelse{\isodd{\value{rownum}}}{\color{gray}}{\color{white}}}c}
+
+\rowcolors{1}{white}{gray}
+{\begin{tabular}{AAAA}
+	1 & 2 & 3 & 4 \\
+	1 & 2 & 3 & 4 \\
+	1 & 2 & 3 & 4 \\
+	1 & 2 & 3 & 4 \\
+	1 & 2 & 3 & 4 \\
+	1 & 2 & 3 & 4 \\
+\end{tabular}
+
+
+\end{document}
