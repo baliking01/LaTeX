@@ -1,0 +1,158 @@
+\documentclass[aspectratio=169,12pt]{beamer}
+\usepackage[english,magyar]{babel}
+\usepackage{t1enc}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{hulipsum}
+\usepackage{blindtext}
+
+\usetheme{Copenhagen}
+\usecolortheme{wolverine}
+\useoutertheme{smoothbars}
+\useinnertheme{circles}
+
+\author{Nagy Balázs}
+\title{\LaTeX\ gyakorlat}
+\subtitle{Egy remek alkotás}
+\institute{Miskolci Egyetem Gépészmérnöki és Informatikai kara}
+
+\begin{document}
+\section{Bevezetés}
+\subsection{Címek}
+\begin{frame}[plain]
+	\maketitle
+\end{frame}
+
+\begin{frame}
+	\sectionpage
+\end{frame}
+\begin{frame}[plain]{Tartalomjegyzék}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}{Valami cím}{Egy kevésbé érdekes alcím}
+	\hulipsum[1]
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Cím 2}{Még egy hasonló alcím}
+	\hulipsum
+\end{frame}
+
+\subsection{Verbatim elhelyezése}
+\begin{frame}[fragile]{Valóban érdekes cím}{alatt}
+	\hulipsum[1]
+	\begin{verbatim}
+		Ez egy verbatim környezet
+	\end{verbatim}
+\end{frame}
+
+\subsection{Fénykép elhelyezése}
+\begin{frame}
+	\begin{columns}[c]
+		\begin{column}{0.5\linewidth}
+			\begin{itemize}
+				\item első
+				\item második
+			\end{itemize}
+			
+			\begin{enumerate}
+				\item harmadik
+				\item negyedik
+			\end{enumerate}
+		\end{column}
+		
+		\begin{column}{0.5\linewidth}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.1]{irén.png}
+				\caption{Egy 21. századi magyar állampolgár}
+			\end{figure}		
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{Block-ok}
+\begin{frame}
+	\begin{block}{Egy szép doboz}
+		A block tartalma
+	\end{block}
+
+	\pause	
+	
+	\begin{exampleblock}{Példák számára}
+		Néhány hasznos példa
+	\end{exampleblock}
+	
+	\begin{alertblock}{}
+		Magyarország előre megy, nem hátra!
+	\end{alertblock}
+\end{frame}
+
+\section{Elmélet}
+\subsection{Elhelyezés}
+\begin{frame}
+	\sectionpage
+\end{frame}
+\begin{frame}[plain]{Tartalomjegyzék II}
+	\tableofcontents[currentsection]
+\end{frame}
+
+\begin{frame}<1, 2>[allowframebreaks]
+	\begin{theorem}
+		\hulipsum[2]
+	\end{theorem}
+	
+		
+	\begin{proof}
+		\hulipsum[5]
+	\end{proof}
+\end{frame}
+
+
+\subsection{Semi-verbatim}
+\begin{semiverbatim}
+	\\begin\{\alert{enumerate}\}
+	\\item 1
+	\\item 2
+	\\item ...
+		\color{green}\\begin\{\alert{enumerate}\}
+			\\item a
+			\\item b
+			\\item c
+		\\end\{enumerate\}
+	\color{black}\\end\{enumerate\}
+\end{semiverbatim}
+
+\begin{frame}
+	\begin{itemize}
+		\item minden slide-on
+		\item<1> egy item
+		\item<2-> csak a második dia után
+		\item\alert<3>{csak a 3. slide-on más színű}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\onslide<2>{Valami, 2. slide}
+	\only<1>{csak az első dián}
+	\visible<3>{Látható szöveg a 3. dián}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item Egy csodálatos fénykép
+		\item<1> 
+		\begin{figure}
+				\includegraphics[scale=0.3]{blob.jpg}
+		\end{figure}				
+		\item<2>
+		\begin{figure}
+				\includegraphics[scale=0.3]{blob.jpg}
+		\end{figure}	
+	\end{itemize}
+\end{frame}
+
+\end{document}

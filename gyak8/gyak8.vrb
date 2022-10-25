@@ -1,0 +1,5 @@
+\frametitle{Valóban érdekes cím}\framesubtitle {alatt}
+	\hulipsum[1]
+	\begin{verbatim}
+		Ez egy verbatim környezet
+	\end{verbatim}

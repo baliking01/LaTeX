@@ -1,0 +1,8 @@
+\select@language {magyar} \beamer@sectionintoc {1}{Bevezetés}{1}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{1}{Címek}{1}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{2}{Verbatim elhelyezése}{12}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{3}{Fénykép elhelyezése}{13}{0}{1}
+\select@language {magyar} \beamer@subsectionintoc {1}{4}{Block-ok}{14}{0}{1}
+\select@language {magyar} \beamer@sectionintoc {2}{Elmélet}{16}{0}{2}
+\select@language {magyar} \beamer@subsectionintoc {2}{1}{Elhelyezés}{16}{0}{2}
+\select@language {magyar} \beamer@subsectionintoc {2}{2}{Semi-verbatim}{20}{0}{2}
