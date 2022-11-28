@@ -1,0 +1,4 @@
+\select@language {english} \beamer@sectionintoc {2}{Rövid összefoglalás az előadásról}{3}{0}{1}
+\select@language {english} \beamer@sectionintoc {3}{Miért pont lítium?}{8}{0}{2}
+\select@language {english} \beamer@sectionintoc {4}{A lítium ionos elemek működése}{16}{0}{3}
+\select@language {english} \beamer@sectionintoc {5}{Felhasználásuk}{19}{0}{4}
